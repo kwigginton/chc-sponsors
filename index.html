@@ -1,116 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Thank You - CHC Sponsorship</title>
-<style>
-  body {
-    margin: 0;
-    font-family: "Roboto", Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-
-  /* Hero section with fade overlay */
-  .hero {
-    position: relative;
-    height: 50vh;
-    background: url('https://images.ctfassets.net/0hz8phi1mu8h/pwPWunNoDfKcMX0UDvuQd/fa68e5f152aea63cbacc6a4a036be335/CHC2024_Group_Photo.jpg') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  .hero-text {
-    position: relative;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  .hero-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-weight: 700;
-  }
-  .hero-text p {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
-  }
-
-  /* Main content */
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    text-align: center;
-  }
-  .container p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-
-  /* Tier image */
-  .tier-image {
-    margin-top: 2rem;
-  }
-  .tier-image img {
-    max-width: 250px;
-    height: auto;
-  }
-
-  @media (max-width: 600px) {
-    .hero-text h1 {
-      font-size: 1.75rem;
-    }
-    .hero-text p {
-      font-size: 1rem;
-    }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHC Sponsors - Thank You</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Hero section -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>Thank You for Your Interest!</h1>
-    <p>We’ll be in touch shortly about your sponsorship.</p>
-  </div>
-</div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Thank You!</h1>
+    </div>
+  </header>
 
-<!-- Content -->
-<div class="container">
-  <p>We appreciate your support of the California Homebrew Competition and look forward to partnering with you.</p>
+  <!-- Yellow Section -->
+  <section class="yellow-section">
+    <div class="container">
+      <p>
+        The California Homebrewers Club would like to thank you for your generous contribution to our cause. Your support
+        helps keep our community strong and thriving.
+      </p>
+      <a href="https://chc.brewingcompetitions.com/index.php?section=contact" class="btn">Contact Us</a>
+    </div>
+  </section>
 
-  <div class="tier-image">
-    <!-- This will swap dynamically with JS based on ?tier= query -->
-    <img id="tierLogo" src="" alt="Sponsorship Tier">
-  </div>
-</div>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const tier = (params.get("tier") || "").toLowerCase();
-
-  const tierMap = {
-    "grand": "https://images.ctfassets.net/0hz8phi1mu8h/51Dj0EPZPlsTfxe5ataSbK/8e37bec9d9b07f4bcde9879ca3409dcf/Grand.png",
-    "gold": "https://images.ctfassets.net/0hz8phi1mu8h/5fJK9EWLpH61HbBiXSHAQZ/7f6bc6046640895c3c2707f6a02e1e8c/Gold.png",
-    "silver": "https://images.ctfassets.net/0hz8phi1mu8h/3xmruzghUvZqlR665fMr1g/f98c934e9457b49138eed027a42d1ccf/Silver.png",
-    "bronze": "https://images.ctfassets.net/0hz8phi1mu8h/1M27MP0FAbeqqSdidxQ51K/c6579986ba0b6d3c6b21533063d55184/Bronze.png"
-  };
-
-  if (tierMap[tier]) {
-    document.getElementById("tierLogo").src = tierMap[tier];
-  } else {
-    document.getElementById("tierLogo").style.display = "none";
-  }
-</script>
+  <!-- Sponsorship Tiers -->
+  <section class="tiers">
+    <div class="container tier-grid">
+      <div class="tier">
+        <h3>Grand</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/51Dj0EPZPlsTfxe5ataSbK/8e37bec9d9b07f4bcde9879ca3409dcf/Grand.png" alt="Grand Sponsor">
+        <p>$1,000+</p>
+      </div>
+      <div class="tier">
+        <h3>Gold</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/5fJK9EWLpH61HbBiXSHAQZ/7f6bc6046640895c3c2707f6a02e1e8c/Gold.png" alt="Gold Sponsor">
+        <p>$500+</p>
+      </div>
+      <div class="tier">
+        <h3>Silver</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/3xmruzghUvZqlR665fMr1g/f98c934e9457b49138eed027a42d1ccf/Silver.png" alt="Silver Sponsor">
+        <p>$250+</p>
+      </div>
+      <div class="tier">
+        <h3>Bronze</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/1M27MP0FAbeqqSdidxQ51K/c6579986ba0b6d3c6b21533063d55184/Bronze.png" alt="Bronze Sponsor">
+        <p>$100+</p>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
