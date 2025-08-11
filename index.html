@@ -63,10 +63,10 @@
       const email = params.get("email") || "";
 
       if (tierParam) {
-        document.getElementById("thank-title").textContent = `Thank you for your interest in ${tierParam} sponsorship!`;
-        const card = Array.from(document.querySelectorAll('.tier'))
-          .find(n => n.dataset.tier.toLowerCase() === tierParam.toLowerCase());
-        if (card) card.classList.add('selected');
+        // document.getElementById("thank-title").textContent = `Thank you for your interest in ${tierParam} sponsorship!`;
+        // const card = Array.from(document.querySelectorAll('.tier'))
+        //   .find(n => n.dataset.tier.toLowerCase() === tierParam.toLowerCase());
+        // if (card) card.classList.add('selected');
 
         fetch(LOG_ENDPOINT + `?tier=${encodeURIComponent(tierParam)}&ref=${encodeURIComponent(ref)}&email=${encodeURIComponent(email)}`, { mode: 'no-cors' });
       }
