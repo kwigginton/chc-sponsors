@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thank you! — California Homebrew Competition</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --muted:#5f6368;
+    --panel:#f5f5f5;
+    --border:#dadce0;
+    --accent:#202124;
+    --card-radius:8px;
+    --maxw:920px;
+  }
+  body{font-family:'Roboto', Arial, sans-serif;background:var(--bg);color:var(--accent);margin:0}
+  .site-header{background:var(--panel);border-bottom:1px solid var(--border);padding:14px 18px;display:flex;align-items:center;justify-content:center}
+  .site-header .title{font-weight:500}
+  main{max-width:var(--maxw);margin:36px auto;padding:24px;text-align:center}
+  h1{font-size:2rem;margin:6px 0 12px;font-weight:500}
+  p.lead{color:var(--muted);font-size:1.05rem;margin:0 0 22px}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-top:28px}
+  .tier{background:#fff;border:1px solid var(--border);border-radius:var(--card-radius);padding:14px;box-shadow:0 1px 0 rgba(0,0,0,0.02);text-align:center}
+  .tier img{max-width:92px;height:auto;margin-bottom:8px}
+  .tier h3{margin:8px 0 4px;font-size:1.1rem}
+  .tier .price{color:var(--muted);font-weight:500}
+  .tier.selected{outline:3px solid #e8f0fe;box-shadow:0 4px 18px rgba(60,64,67,0.08)}
+  footer{margin-top:36px;padding:18px;background:var(--panel);border-top:1px solid var(--border);color:var(--muted);font-size:0.9rem;text-align:center}
+  @media (max-width:420px){h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="title">CHC</div>
+</header>
+
+<main>
+  <h1 id="thank-title">Thank you!</h1>
+  <p class="lead" id="lead-text">We've received your intent and will be in touch soon.</p>
+
+  <div class="tiers" aria-label="Sponsorship tiers">
+    <div class="tier" id="tier-bronze" data-tier="Bronze">
+      <img src="https://lh4.googleusercontent.com/tME3FF8Gfh5qDKqVGgU4Q4ojaXTtlwx2O_T5Orv0Lm1cRqRXxdxEbsOf_TJfPRuY8218jCfC_17g_ucHHFfZq0pDjfKipeClrn-pBTj0sMixxwbIo2g46xur-kgpx-1CKsdNEsmUlnQSNXoVLf1rU3WFPx3PpM26eAH16pdPGO98cay7KJDEQQ%3Dw1280" alt="Bronze badge">
+      <h3>Bronze</h3>
+      <div class="price">$100+</div>
+    </div>
+
+    <div class="tier" id="tier-silver" data-tier="Silver">
+      <img src="https://lh3.googleusercontent.com/vj57KWm7mtxaUppuRH6XPJaUNc8wa-ev5HSTmb8o9PjgA6V1m5dU-_lWGCgRqO41W3ZZT0fwGLopAQWi-vKy4qJkVdCFqn7K3hnsRAzsCh6Il8bN5OL4llOKDITK-tKPNsw3vPSV_Pv9-yLJJUntsN5gJs2hMRH0snFoJ_neMMuKW-MINjoI8w%3Dw1280" alt="Silver badge">
+      <h3>Silver</h3>
+      <div class="price">$200+</div>
+    </div>
+
+    <div class="tier" id="tier-gold" data-tier="Gold">
+      <img src="https://lh3.googleusercontent.com/znDNVpOoDq2LFrbXNMqtQpNKxwtbCvN3T7099mUg-lut3QyHHZgEYRIn2g2u0JLRmyECVedXxIYVTh3xoWKvRvLytbZY3VA9RGIuwv_Ske9MbFFEl4KFp5-57Vlk0ROBtc5HogWvNH4d9bDD4-TQzFuYsEr3w6Zhu9z1QzDPKYFjmdPh-xr66Q%3Dw1280" alt="Gold badge">
+      <h3>Gold</h3>
+      <div class="price">$400+</div>
+    </div>
+
+    <div class="tier" id="tier-grand" data-tier="Grand">
+      <img src="https://lh5.googleusercontent.com/Be1PWc24e_Z4_5ihsEqOf96dO5hU-w326UpA7qZD6A31ylvLZqKdbiTU2gbtz2cq0S9PM-QoKL54UrB4L8obmWH9kSHiW63ZHCeIvoulPInr29F5Pbhw6ML5i2iEXiZAe3JmFjFP2Jv6O_eNkzaJDMIwphgSPA6hCiaY7ziHE8o3EhXJaUksHg%3Dw1280" alt="Grand badge">
+      <h3>Grand</h3>
+      <div class="price">$800+</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Let us know if you'll sponsor us! — <a href="https://sites.google.com/view/chc-sponsors/contact-us" target="_blank" rel="noopener">Contact Us</a>
+</footer>
+
+<script>
+/* ----- CONFIG: put your Apps Script / logging endpoint here ----- */
+const LOG_ENDPOINT = "https://script.google.com/macros/s/AKfycbx3q6LsE7QRCZ81XAkHlNf4Ycim5mHET_0T_2aeEE4LEu0TPJzHddbqhVrmOidCdPQH/exec";
+
+/* Read query params, update copy, highlight the tier, and log it */
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const tierParam = params.get("tier");
+  const ref = params.get("ref") || document.referrer || "";
+  const email = params.get("email") || "";
+
+  if(tierParam){
+    // update main heading / lead
+    const title = document.getElementById("thank-title");
+    title.textContent = `Thanks for your interest in ${tierParam} sponsorship!`;
+
+    // optionally change the lead text or add more copy
+    const lead = document.getElementById("lead-text");
+    lead.textContent = "We’ll be in touch shortly about the California Homebrew Competition.";
+
+    // highlight the matching tier card if present
+    const card = Array.from(document.querySelectorAll('.tier'))
+      .find(n => n.dataset.tier.toLowerCase() === tierParam.toLowerCase());
+    if(card) card.classList.add('selected');
+
+    // Log it (GET request)
+    const url = LOG_ENDPOINT + 
+      "?tier=" + encodeURIComponent(tierParam) +
+      "&ref=" + encodeURIComponent(ref) +
+      "&email=" + encodeURIComponent(email);
+
+    // fire-and-forget
+    fetch(url, {mode:'no-cors'}).catch(()=>{ /* ignore network errors; no-cors to avoid CORS config */ });
+  }
+})();
+</script>
+
+</body>
+</html>
