@@ -32,27 +32,45 @@
   <section class="tiers">
     <div class="container tier-grid">
       <div class="tier">
-        <h3>Grand</h3>
-        <img src="https://images.ctfassets.net/0hz8phi1mu8h/51Dj0EPZPlsTfxe5ataSbK/8e37bec9d9b07f4bcde9879ca3409dcf/Grand.png" alt="Grand Sponsor">
-        <p>$1,000+</p>
-      </div>
-      <div class="tier">
-        <h3>Gold</h3>
-        <img src="https://images.ctfassets.net/0hz8phi1mu8h/5fJK9EWLpH61HbBiXSHAQZ/7f6bc6046640895c3c2707f6a02e1e8c/Gold.png" alt="Gold Sponsor">
-        <p>$500+</p>
-      </div>
-      <div class="tier">
-        <h3>Silver</h3>
-        <img src="https://images.ctfassets.net/0hz8phi1mu8h/3xmruzghUvZqlR665fMr1g/f98c934e9457b49138eed027a42d1ccf/Silver.png" alt="Silver Sponsor">
-        <p>$250+</p>
-      </div>
-      <div class="tier">
         <h3>Bronze</h3>
         <img src="https://images.ctfassets.net/0hz8phi1mu8h/1M27MP0FAbeqqSdidxQ51K/c6579986ba0b6d3c6b21533063d55184/Bronze.png" alt="Bronze Sponsor">
         <p>$100+</p>
       </div>
+      <div class="tier">
+        <h3>Silver</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/3xmruzghUvZqlR665fMr1g/f98c934e9457b49138eed027a42d1ccf/Silver.png" alt="Silver Sponsor">
+        <p>$200+</p>
+      </div>
+      <div class="tier">
+        <h3>Gold</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/5fJK9EWLpH61HbBiXSHAQZ/7f6bc6046640895c3c2707f6a02e1e8c/Gold.png" alt="Gold Sponsor">
+        <p>$400+</p>
+      </div>
+      <div class="tier">
+        <h3>Grand</h3>
+        <img src="https://images.ctfassets.net/0hz8phi1mu8h/51Dj0EPZPlsTfxe5ataSbK/8e37bec9d9b07f4bcde9879ca3409dcf/Grand.png" alt="Grand Sponsor">
+        <p>$800+</p>
+      </div>
     </div>
   </section>
+<script>
+    const LOG_ENDPOINT = "https://script.google.com/macros/s/AKfycbykxXs7xUdPDWi3dd1qFeypKLE3rXz3veSKDM_ki4_YdsxAh7lYWUWPpqrlCt0wyN3R/exec";
 
+    (function(){
+      const params = new URLSearchParams(window.location.search);
+      const tierParam = params.get("tier");
+      const ref = params.get("ref") || document.referrer || "";
+      const email = params.get("email") || "";
+
+      if (tierParam) {
+        document.getElementById("thank-title").textContent = `Thank you for your interest in ${tierParam} sponsorship!`;
+        const card = Array.from(document.querySelectorAll('.tier'))
+          .find(n => n.dataset.tier.toLowerCase() === tierParam.toLowerCase());
+        if (card) card.classList.add('selected');
+
+        fetch(LOG_ENDPOINT + `?tier=${encodeURIComponent(tierParam)}&ref=${encodeURIComponent(ref)}&email=${encodeURIComponent(email)}`, { mode: 'no-cors' });
+      }
+    })();
+  </script>
 </body>
 </html>
