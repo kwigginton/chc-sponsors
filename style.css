@@ -5,17 +5,16 @@ body {
 }
 /* Logo Section */
 .chc-logo-link {
-  position: fixed; /* stays in place even while scrolling */
-  top: 15px;
-  left: 15px;
-  z-index: 3000; /* higher than nav, hero fade, and content */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10; /* sits above the hero fade */
 }
 
 .chc-logo {
-  height: 60px;
+  height: 100px;
   width: auto;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
-  pointer-events: auto; /* ensures click works */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
 body {
