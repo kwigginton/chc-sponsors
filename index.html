@@ -10,7 +10,7 @@
 <body>
   <!-- Clickable Logo -->
   <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors" class="chc-logo-link">
-    <img src="https://images.ctfassets.net/0hz8phi1mu8h/4f10JEVEtaIEi2QHz9FgUF/9a5c8dcd83ca0b76a61fb67ac4b8b6bb/CHC_Logo.svg" 
+    <img src="https://images.ctfassets.net/0hz8phi1mu8h/iBWCZN5U8tKdy0D4wS1ZV/fa04919f98dc5f59ef163e4e518ddc15/2026_2026.png" 
          alt="CHC Logo" 
          class="chc-logo">
   </a>
@@ -40,22 +40,22 @@
     <div class="container tier-grid">
       <div class="tier">
         <h3>Bronze</h3>
-        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/1M27MP0FAbeqqSdidxQ51K/c6579986ba0b6d3c6b21533063d55184/Bronze.png" alt="Bronze Sponsor"></a>
+        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/7zPYU4TRnjij9XJQu7fy3J/d74a342f61045d8cfa0624318237f861/2026_Bronze_2026.png" alt="Bronze Sponsor"></a>
         <p>$100+</p>
       </div>
       <div class="tier">
         <h3>Silver</h3>
-        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/3xmruzghUvZqlR665fMr1g/f98c934e9457b49138eed027a42d1ccf/Silver.png" alt="Silver Sponsor"></a>
+        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/1bkM4wVFSfBtFx14UEw7PI/28752c6e58e41560e1f09ff05b9f4f15/2026_Silver_2026.png" alt="Silver Sponsor"></a>
         <p>$200+</p>
       </div>
       <div class="tier">
         <h3>Gold</h3>
-        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/5fJK9EWLpH61HbBiXSHAQZ/7f6bc6046640895c3c2707f6a02e1e8c/Gold.png" alt="Gold Sponsor"></a>
+        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/7psRH6xmCgjAG4cga3HIfB/095911ef127c798411284e44d34e8143/2026_Gold_2026.png" alt="Gold Sponsor"></a>
         <p>$400+</p>
       </div>
       <div class="tier">
         <h3>Grand</h3>
-        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/51Dj0EPZPlsTfxe5ataSbK/8e37bec9d9b07f4bcde9879ca3409dcf/Grand.png" alt="Grand Sponsor"></a>
+        <a href="https://chc.brewingcompetitions.com/index.php?section=sponsors"><img src="https://images.ctfassets.net/0hz8phi1mu8h/1DbvJRtwu24rMjmEy4ojeT/9735ea8eab247a4a958de9ea71a9e80c/2026_Grand_2026.png" alt="Grand Sponsor"></a>
         <p>$800+</p>
       </div>
     </div>
@@ -69,24 +69,5 @@
       <a href="mailto:chcsponsorships@gmail.com" class="btn">Contact Us</a>
     </div>
   </section>
-<script>
-    const LOG_ENDPOINT = "https://script.google.com/macros/s/AKfycbykxXs7xUdPDWi3dd1qFeypKLE3rXz3veSKDM_ki4_YdsxAh7lYWUWPpqrlCt0wyN3R/exec";
-
-    (function(){
-      const params = new URLSearchParams(window.location.search);
-      const tierParam = params.get("tier");
-      const ref = params.get("ref") || document.referrer || "";
-      const email = params.get("email") || "";
-
-      if (tierParam) {
-        // document.getElementById("thank-title").textContent = `Thank you for your interest in ${tierParam} sponsorship!`;
-        // const card = Array.from(document.querySelectorAll('.tier'))
-        //   .find(n => n.dataset.tier.toLowerCase() === tierParam.toLowerCase());
-        // if (card) card.classList.add('selected');
-
-        fetch(LOG_ENDPOINT + `?tier=${encodeURIComponent(tierParam)}&ref=${encodeURIComponent(ref)}&email=${encodeURIComponent(email)}`, { mode: 'no-cors' });
-      }
-    })();
-  </script>
 </body>
 </html>
